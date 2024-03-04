@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcom Page</title>
+</head>
+<body>
+    <img src="" alt="" srcset="">
+    <span id="message" style="position: relative;top: -145px;"></span>
+    <script>
+        let gender,color,name
+        let obj={}
+        let splitCookie = document.cookie.split(";")
+        for(let i=0;i<splitCookie.length;i++){
+           let keyvalue = splitCookie[i].split("=")
+            obj[keyvalue[0].trim()]=keyvalue[1]
+        }
+        if(obj.gender=="male"){
+            document.images[0].src="1.jpg"
+        }
+        else{
+            document.images[0].src="2.jpg"
+        }
+        let welcomeMessage = document.getElementById("message")
+        
+        let refreshCount=0
+        window.addEventListener("load",function(){
+
+
+                refreshCount = obj.count
+                refreshCount++
+                document.cookie = `count=${refreshCount}`
+
+            welcomeMessage.innerHTML = `Welcome <span style="color:${obj.color}">${obj.name}</span> you have visited the site <span style="color:${obj.color}">${refreshCount}</span> times:)`
+        })
+    </script>
+</body>
+</html>

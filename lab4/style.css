@@ -1,0 +1,15 @@
+img{
+    width: 280px;
+    height: 250px;
+    margin:80px 0;
+}
+#asci,#inputNumber{
+    margin-top: 50px;
+}
+.imgmarbel{
+    width: 40px;
+    height: 40px;
+}
+#marbelimages{
+    width: fit-content;
+}

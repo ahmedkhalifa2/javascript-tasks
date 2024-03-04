@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies</title>
+    <link rel="stylesheet" href="style.css">
+
+
+   
+</head>
+<body>
+    
+    <form action="welcome.html" id="cokiesForm">
+        <div id="intable">
+            <label for="namWelcom">Enter your Name : </label>
+            <input type="text" id="namWelcom" required>
+        </div>
+        <div id="intable">
+            <label for="ageWelcom">Enter your Age : </label>
+            <input type="number" id="ageWelcom" required>
+        </div>
+        <div id="intable">
+            <label>Select Your Gender : </label>
+            <br><br>
+            <img src="1.jpg" alt="" width="200">
+            <input type="radio" id="male" name="male">
+            <img src="2.jpg" alt="" width="350">
+            <input type="radio" id="female" name="male">
+        </div>
+        <div>
+            <label for="sColor">select your favourite color</label>
+            <select name="" id="sColor">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+
+        <input type="submit" id="btngender"></input>
+        
+
+    </form>
+
+    <script>
+
+        let gender,nam,color
+
+        color = document.getElementById("sColor")
+        console.log(color.value)
+
+
+document.getElementById("cokiesForm").addEventListener("submit",function(ev){
+    let inputt = document.querySelectorAll("input")
+    
+let datee = new Date()
+datee.setMonth(datee.getMonth()+2)
+    document.cookie =`name=${inputt[0].value};expires=${datee}`
+    document.cookie =`color=${color.value};expires=${datee}`
+    document.cookie =`count=${0};expires=${datee}`
+    if(inputt[2].checked)
+     document.cookie =`gender=male;expires=${datee}`
+    else
+    document.cookie =`gender=female;expires=${datee}`
+
+});
+    </script>
+</body>
+</html>
